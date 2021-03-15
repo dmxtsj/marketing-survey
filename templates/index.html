@@ -88,12 +88,12 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="default" id="id_others" onclick="toggletextfield()">
+                <input class="form-check-input" type="radio" name="default" id="id_others" value="others" onclick="toggletextfield()">
                 <label class="form-check-label" for="id_others">
                     Others:
                 </label>
                 <input disabled placeholder="Other marketing tools" type="text" class="form-control" id="textfield"
-                    name="default" data-rule-required="true" contenteditable="false">
+                    name="textfield" data-rule-required="true" contenteditable="false">
             </div>
         </div>
 
@@ -103,7 +103,7 @@
                 data-rule-required="true" contenteditable="false" required>
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="submitfunction()">Submit </button>
+        <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
 
@@ -121,13 +121,6 @@
                 textfieldelement.disabled = true;
             }
         }
-
-        function submitfunction() {
-            let submittextfield = document.getElementById("textfield");
-            submittextfield.value = "";
-
-        }
-
     </script>
 
     <!-- Javascript to function Bootstrap properly (taken from bootstrap website) -->

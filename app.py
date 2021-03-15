@@ -26,11 +26,15 @@ def submit_form():
         gender = request.form.get("gender")
         age = request.form.get("agefield")
         email = request.form.get("emailfield")
-        print(age, gender, marketing_tools, email)
+        textfield = request.form.get("textfield")
+
+        if marketing_tools == "others":
+            marketing_tools = request.form.get("textfield")
+
         sql="INSERT INTO test_survey (gender, age, marketing_tool, email) VALUES (%s, %s, %s, %s)"
         cursor.execute(sql, (gender, age, marketing_tools, email))
         db.commit()
-        print(cursor.fetchall())
+
         return redirect("/submitted_page")
     else:
         return redirect("/")
