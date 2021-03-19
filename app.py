@@ -30,8 +30,9 @@ def submit_form():
 
         if marketing_tools == "others":
             marketing_tools = request.form.get("textfield")
-
-        sql="INSERT INTO test_survey (gender, age, marketing_tool, email) VALUES (%s, %s, %s, %s)"
+        
+        # previous test table name is test_survey
+        sql="INSERT INTO survey_results (gender, age, marketing_tool, email) VALUES (%s, %s, %s, %s)"
         cursor.execute(sql, (gender, age, marketing_tools, email))
         db.commit()
 
